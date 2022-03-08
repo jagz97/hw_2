@@ -1,7 +1,7 @@
 import time
 
 
-def timer(func):
+def calculate_time(func):
     def wrapper():
         t1 = time.time()
         result = func()
@@ -12,11 +12,11 @@ def timer(func):
     return wrapper
 
 
-@timer
-def long_time():
+@calculate_time
+def time():
     for i in range(100000):
         for j in range(100):
-            i * j
+            i +  j
 
 
-long_time()
+time()
